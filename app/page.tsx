@@ -1,3 +1,7 @@
+"use client";
+
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { motion } from "framer-motion";
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#050816] text-white">
@@ -34,7 +38,12 @@ export default function Home() {
 
      
       {/* Content */}
-      <section className="relative z-10 flex min-h-screen items-center px-8">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 flex min-h-screen items-center px-8"
+      >
         <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-2">
           
           {/* Left Side */}
@@ -71,7 +80,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
             {/* About Section */}
       <section id="about" className="relative z-10 px-8 py-32">
@@ -92,6 +101,52 @@ export default function Home() {
           </p>
         </div>
       </section>
+            {/* Tech Stack */}
+      <section className="relative z-10 px-8 py-24">
+        <div className="mx-auto max-w-6xl">
+
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-cyan-400">
+            Tech Stack
+          </p>
+
+          <h2 className="mb-12 text-5xl font-light tracking-tight">
+            Technologies I work with.
+          </h2>
+
+          <div className="flex flex-wrap gap-4">
+
+            {[
+              "AWS",
+              "Kubernetes",
+              "Terraform",
+              "Docker",
+              "Linux",
+              "Prometheus",
+              "Grafana",
+              "GitHub Actions",
+              "DNS",
+              "PowerBI",
+              "Python",
+              "CI/CD",
+              "Cloud Infrastructure",
+              "MySQL/PostgreSQL",
+              "TCP/IP Networking",
+              "REST APIs",
+              "Jira/Confluence",
+              "Bash",
+
+            ].map((skill) => (
+              <div
+                key={skill}
+                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-gray-300 backdrop-blur-md transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-white"
+              >
+                {skill}
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
       {/* Projects Section */}
       <section id="projects" className="relative z-10 px-8 py-32">
         <div className="mx-auto max-w-7xl">
@@ -107,7 +162,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-3">
             
             {/* Project 1 */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/10">
+            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
               
               <img
                 src="/canary.png"
@@ -133,7 +188,7 @@ export default function Home() {
             </div>
 
             {/* Project 2 */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/10">
+            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
               
               <img
                 src="/kubernetes.png"
@@ -159,7 +214,7 @@ export default function Home() {
             </div>
 
             {/* Project 3 */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/10">
+            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
               
               <img
               src="/grafana.png"
@@ -203,30 +258,33 @@ export default function Home() {
             Open to cloud engineering, DevOps and infrastructure opportunities.
           </p>
 
-          <div className="flex justify-center gap-8 text-lg text-gray-300">
-            
+          <div className="flex justify-center gap-10 text-gray-300">
+
             <a
               href="https://www.linkedin.com/in/smartinez-in/"
               target="_blank"
-              className="transition hover:text-cyan-400"
+              rel="noopener noreferrer"
+              className="transition duration-300 hover:scale-110 hover:text-cyan-400"
             >
-              LinkedIn
+              <FaLinkedin size={28} strokeWidth={1.5} />
             </a>
 
             <a
               href="https://github.com/sebastianfernandom33-ctrl/"
               target="_blank"
-              className="transition hover:text-cyan-400"
+              rel="noopener noreferrer"
+              className="transition duration-300 hover:scale-110 hover:text-cyan-400"
             >
-              GitHub
+              <FaGithub size={28} strokeWidth={1.5} />
             </a>
 
             <a
               href="mailto:sebastianfernando.m33@gmail.com"
-              className="transition hover:text-cyan-400"
+              className="transition duration-300 hover:scale-110 hover:text-cyan-400"
             >
-              Email
+              <FaEnvelope size={28} strokeWidth={1.5} />
             </a>
+
           </div>
         </div>
       </section>
