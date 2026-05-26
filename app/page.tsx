@@ -4,13 +4,26 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#050816] text-white">
+    <main
+        id="top"
+        className="relative min-h-screen overflow-hidden bg-[#050816] text-white"
+    >
             {/* Navbar */}
       <nav className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#050816]/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
           
           <div className="text-sm font-light tracking-[0.25em] text-white">
-            SEBASTIÁN MARTÍNEZ QUIÑONES
+            <button
+              onClick={() =>
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+                })
+              }
+              className="transition hover:text-cyan-400"
+            >
+                SEBASTIÁN MARTÍNEZ QUIÑONES
+            </button>
           </div>
 
           <div className="flex gap-8 text-sm text-gray-400">
