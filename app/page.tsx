@@ -20,7 +20,7 @@ export default function Home() {
                 behavior: "smooth",
                 })
               }
-              className="transition hover:text-cyan-400"
+              className="cursor-pointer transition hover:text-cyan-400"
             >
                 SEBASTIÁN MARTÍNEZ QUIÑONES
             </button>
