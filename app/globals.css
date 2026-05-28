@@ -21,3 +21,12 @@ h2,
 h3 {
   font-family: var(--font-space);
 }
+
+/* Hide horizontal scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}

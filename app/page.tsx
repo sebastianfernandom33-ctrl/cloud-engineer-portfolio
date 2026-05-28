@@ -2,7 +2,50 @@
 
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function Home() {
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+const [showLeft, setShowLeft] = useState(false);
+const [showRight, setShowRight] = useState(true);
+
+const checkScroll = () => {
+  const container = scrollRef.current;
+
+  if (container) {
+    const maxScroll =
+      container.scrollWidth - container.clientWidth;
+
+    setShowLeft(container.scrollLeft > 5);
+    setShowRight(container.scrollLeft < maxScroll - 5);
+  }
+};
+
+const scroll = (direction: "left" | "right") => {
+  const container = scrollRef.current;
+
+  if (container) {
+    const card = container.querySelector(".project-card");
+
+    if (card) {
+      const cardWidth = card.clientWidth + 32;
+
+      container.scrollTo({
+        left:
+          direction === "left"
+            ? container.scrollLeft - cardWidth
+            : container.scrollLeft + cardWidth,
+        behavior: "smooth",
+      });
+    }
+  }
+};
+
+useEffect(() => {
+  checkScroll();
+}, []);
   return (
     <main
         id="top"
@@ -172,10 +215,43 @@ export default function Home() {
             Real cloud infrastructure and deployment workflows.
           </h2>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="relative">
+
+            {showLeft && (
+              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-[#050816] to-transparent" />
+          )}
+
+            {showRight && (
+              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-[#050816] to-transparent" />
+          )}
+          
+            {showLeft && (
+              <button
+                onClick={() => scroll("left")}
+                className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/10 bg-black/40 p-3 backdrop-blur-md transition hover:border-cyan-400/30 hover:bg-cyan-400/10"
+              >
+                <ChevronLeft size={20} />
+              </button>
+            )}
+
+            {showRight && (
+              <button
+                onClick={() => scroll("right")}
+                className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/10 bg-black/40 p-3 backdrop-blur-md transition hover:border-cyan-400/30 hover:bg-cyan-400/10"
+            >
+                <ChevronRight size={20} />
+              </button>
+          )}
+
+            <div
+              ref={scrollRef}
+              onScroll={checkScroll}
+              className="flex gap-8 overflow-x-auto scroll-smooth py-4 px-1"
+            >
             
+
             {/* Project 1 */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
+            <div className="project-card group min-w-[420px] max-w-[420px] flex-shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
               
               <img
                 src="/canary.png"
@@ -201,7 +277,7 @@ export default function Home() {
             </div>
 
             {/* Project 2 */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
+            <div className="project-card group min-w-[420px] max-w-[420px] flex-shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
               
               <img
                 src="/kubernetes.png"
@@ -227,7 +303,7 @@ export default function Home() {
             </div>
 
             {/* Project 3 */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
+            <div className="project-card group min-w-[420px] max-w-[420px] flex-shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
               
               <img
               src="/grafana.png"
@@ -236,7 +312,7 @@ export default function Home() {
               />
 
               <h3 className="mb-4 text-2xl font-light">
-                Monitoring & Observability Stack
+                Monitoring & Observability Stack (Prometheus)
               </h3>
 
               <p className="leading-relaxed text-gray-400">
@@ -252,9 +328,38 @@ export default function Home() {
               </a>
             </div>
 
+
+            {/* Project 4 */}
+            <div className="project-card group min-w-[420px] max-w-[420px] flex-shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
+              
+              <img
+              src="/loki.png"
+              alt="Loki Logging"
+              className="mb-6 h-48 w-full rounded-2xl object-cover opacity-90 transition-all duration-300 group-hover:opacity-100"
+              />
+
+              <h3 className="mb-4 text-2xl font-light">
+                Monitoring & Observability Stack (Loki)
+              </h3>
+
+              <p className="leading-relaxed text-gray-400">
+                Implemented Loki + Promtail and Grafana dashboards to visualize
+                logs requests and details.
+              </p>
+              <a
+                href="https://github.com/sebastianfernandom33-ctrl/cloud-observability-stack"
+                target="_blank"
+                className="mt-6 inline-flex items-center text-sm text-cyan-400 transition hover:text-cyan-300"
+              >
+                View Project →
+              </a>
+            </div>
+
+            </div>
           </div>
         </div>
       </section>
+
             {/* Contact Section */}
       <section id="contact" className="relative z-10 px-8 py-32">
         <div className="mx-auto max-w-4xl text-center">
