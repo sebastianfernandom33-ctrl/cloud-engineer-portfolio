@@ -224,7 +224,7 @@ useEffect(() => {
             {showRight && (
               <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-[#050816] to-transparent" />
           )}
-          
+
             {showLeft && (
               <button
                 onClick={() => scroll("left")}
@@ -354,6 +354,32 @@ useEffect(() => {
                 View Project →
               </a>
             </div>
+
+            {/* Project 5 */}
+            <div className="project-card group min-w-[420px] max-w-[420px] flex-shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
+              
+              <img
+              src="/site.png"
+              alt="Site Next.js"
+              className="mb-6 h-48 w-full rounded-2xl object-cover opacity-90 transition-all duration-300 group-hover:opacity-100"
+              />
+
+              <h3 className="mb-4 text-2xl font-light">
+                Site Portfolio Next.js
+              </h3>
+
+              <p className="leading-relaxed text-gray-400">
+                Modern cloud and DevOps portfolio built with Next.js, Tailwind CSS and Framer Motion.
+              </p>
+              <a
+                href="https://github.com/sebastianfernandom33-ctrl/cloud-engineer-portfolio"
+                target="_blank"
+                className="mt-6 inline-flex items-center text-sm text-cyan-400 transition hover:text-cyan-300"
+              >
+                View Project →
+              </a>
+            </div>
+
 
             </div>
           </div>

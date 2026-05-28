@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sebastián CloudOps Portfolio
 
-## Getting Started
+Modern cloud and DevOps portfolio built with Next.js, Tailwind CSS and Framer Motion.
 
-First, run the development server:
+## 🌐 Live Website
+
+sebastiancloudops.com
+
+---
+
+## ✨ Features
+
+* Modern SaaS-inspired UI
+* Smooth scrolling experience
+* Interactive projects carousel
+* Responsive layout
+* Animated transitions
+* Glassmorphism design
+* Cloud & DevOps focused presentation
+
+---
+
+## 🛠️ Tech Stack
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* React Icons
+* Lucide React
+
+---
+
+## ☁️ Deployment & Infrastructure
+
+* Hosted on Vercel
+* Custom domain configured with DNS management
+* HTTPS enabled automatically
+* Optimized global delivery through Vercel Edge Network
+
+---
+
+## 📂 Featured Projects
+
+### Canary Deployment on AWS EKS
+
+Blue/Green deployment strategy using Kubernetes ingress, AWS ALB weighted routing and real-time monitoring.
+
+### Terraform AWS Infrastructure
+
+Provisioned scalable AWS infrastructure including VPC, subnets, EKS cluster and networking resources.
+
+### Monitoring & Observability Stack (Prometheus)
+
+Infrastructure metrics and deployment visualization using Prometheus and Grafana.
+
+### Monitoring & Observability Stack (Loki)
+
+Centralized logging with Loki, Promtail and Grafana dashboards.
+
+---
+
+## 🚀 Running Locally
 
 ```bash
+git clone https://github.com/sebastianfernandom33-ctrl/sebastian-portfolio.git
+
+cd sebastian-portfolio
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📸 Preview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<img width="1600" alt="Portfolio Preview" src="./public/preview.png">
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* LinkedIn: linkedin.com/in/smartinez-in
+* GitHub: github.com/sebastianfernandom33-ctrl
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+Built with focus on modern cloud engineering, observability and infrastructure automation.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
