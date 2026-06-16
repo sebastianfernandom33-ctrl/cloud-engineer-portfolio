@@ -254,21 +254,26 @@ useEffect(() => {
             <div className="project-card group min-w-[420px] max-w-[420px] flex-shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
               
               <img
-                src="/canary.png"
-                alt="Canary Deployment"
+                src="/flowresta.png"
+                alt="Flowresta"
                 className="mb-6 h-48 w-full rounded-2xl object-cover opacity-90 transition-all duration-300 group-hover:opacity-100"
               />
 
               <h3 className="mb-4 text-2xl font-light">
-                Canary Deployment on AWS EKS
+                Flowresta
               </h3>
 
               <p className="leading-relaxed text-gray-400">
-                Blue/Green deployment strategy using AWS ALB weighted routing,
-                Kubernetes ingress and real-time monitoring with Prometheus and Grafana.
+                Flowresta is an experimental Git visualization tool that transforms repositories into interactive living forests.
+
+                Branches become trees.
+                Commits become growth rings.
+                History becomes life.
+
+                Instead of reading a repository as a list, Flowresta lets you explore software evolution visually.
               </p>
               <a
-                href="https://github.com/sebastianfernandom33-ctrl/kubernetes-canary-deployment"
+                href="https://github.com/sebastianfernandom33-ctrl/flowresta"
                 target="_blank"
                 className="mt-6 inline-flex items-center text-sm text-cyan-400 transition hover:text-cyan-300"
               >
@@ -380,6 +385,31 @@ useEffect(() => {
               </a>
             </div>
 
+            {/* Project 6 */}
+            <div className="project-card group min-w-[420px] max-w-[420px] flex-shrink-0 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/10">
+              
+              <img
+                src="/canary.png"
+                alt="Canary Deployment"
+                className="mb-6 h-48 w-full rounded-2xl object-cover opacity-90 transition-all duration-300 group-hover:opacity-100"
+              />
+
+              <h3 className="mb-4 text-2xl font-light">
+                Canary Deployment on AWS EKS
+              </h3>
+
+              <p className="leading-relaxed text-gray-400">
+                Blue/Green deployment strategy using AWS ALB weighted routing,
+                Kubernetes ingress and real-time monitoring with Prometheus and Grafana.
+              </p>
+              <a
+                href="https://github.com/sebastianfernandom33-ctrl/kubernetes-canary-deployment"
+                target="_blank"
+                className="mt-6 inline-flex items-center text-sm text-cyan-400 transition hover:text-cyan-300"
+              >
+                View Project →
+              </a>
+            </div>
 
             </div>
           </div>
